@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 2: React
+#### Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Let's kick it up a notch and build a modular and modern front end application using React!
 
-## Available Scripts
+Like with project one, the Unit 2 project is a chance to be creative and build something you should be proud of. You will be working individually for this project, but we'll be supporting you through the process and guiding you as you go. 
 
-In the project directory, you can run:
+You must submit your idea to Instructional Team by 4pm ET Today (Thursday November 10th).
 
-### `npm start`
+Show us what you've got!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Your website must:
+- Be a working, interactive, React application.
+- Include data from a third-party API.
+    - Pull data into the application using an API  
+        [List of Public APIs](https://github.com/toddmotto/public-apis)  
+        [More APIs](https://github.com/abhishekbanthia/Public-APIs)  
+	[Instructor Recommended APIs](https://git.generalassemb.ly/sei-nyc-pirates/apis)
+    - TRY OUT your API in the browser by making an fetch request before you get too emotionally invested in it, to make sure it works the way you think it does...**YOU ARE REQUIRED TO SHOW US YOU CAN RECEIVE THE DATA FOR YOUR PROPOSAL**
+- Use React Router.
+- Have at least 6 separate components, using a [readable file structure](https://i.imgur.com/7vwe1hh.png).
+- Be built using Create React App.
+- Be styled with CSS.
+- Use Flexbox or CSS Grid for layouts.
+- Use components appropriately.
+- Be deployed via [Netlify](https://www.netlify.com/), [Surge](https://daveceddia.com/deploy-create-react-app-surge/), or [Vercel](https://vercel.com/guides/deploying-react-with-vercel).
 
-### `npm test`
+- **Optionally, you may incorporate a component library to design your app with approval, or use [Next.js](https://nextjs.org/) or [Gatsby](https://www.gatsbyjs.com/) instead of React Router and Create React App**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Your code must:
 
-### `npm run build`
+- Be properly indented.  
+- Be written with semantic, camelCase JavaScript variable names.  
+- Be written with kebab-case (dashes) CSS class names.  
+- Contain no `console.log()` or commented out code in final version.  
+- Use only React for DOM manipulation.  
+- No pre-loaded `create-react-app` files or code.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Necessary Deliverables
+#### A README with the following:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Refer to the [project worksheet](/project-worksheet.md) file in this repo for structuring your README.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###### For the proposal:
+- A collection of wireframes - hand-drawn or digitally created - outlining the important pages of your site, as well as the critical states of your project, drawing a component hierarchy would be a great way to indicate which components need state and which components need props.
+- A proposal including:
+	- A description of the project you'll be building with the objective described in non-technical language.
+	- An explanation of the major problems you _plan_ to face while implementing this app.
+	- An explanation of how you foresee yourself solving the aforementioned problems.
+	- A visual of your component hierarchy.  
+	- A link to the API you plan to use. _(Including a demonstration of retrieving API data.)_ 
+	- A section clearly defining MVP and POST MVP goals.
+	- If you plan on incorporating a component library, include a link in your proposal.
 
-### `npm run eject`
+#### For the project:
+- A git repository hosted on GitHub, with a link to your hosted project, and **frequent** commits dating back to the very beginning of the project (YOUR APP SHOULD BE LOCATED IN A SEPARATE STANDING REPO. DO NOT build your app in this repository. YOU MUST initiate a new repo on your GitHub account.) 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<hr>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tips
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* **Commit early, commit often.**  Don't be afraid to break something because you can always go back in time to a previous version. We expect to see a minimum of 30 commits, but with good git workflow practices utilized... your project should have well over 50 commits during project week. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Planning
 
-## Learn More
+1. [Watch this video on the Minimum Viable Product](https://www.youtube.com/watch?v=1FoCbbbcYT8)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Begin with the end in mind**. Spend a dedicated block of time to planning with ***wireframes*** and ***user stories*** so you don't waste time building things you don't need.
+3. **Write pseudocode before you write actual code**. Thinking through the logic of something helps streamline your process.
+4. **User stories define what a specific type of user wants to accomplish with your application**. It's tempting to just use your list of user stories as a ***todo list***, but try to avoid this. If you keep your user stories small and focused on what a user cares about being able to do. This will help you prioritize your tasks and which features to build first.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> [Definition of User Stories](https://www.mountaingoatsoftware.com/agile/user-stories)
 
-### Code Splitting
+## Building Out from your Plan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+After planning your app: 
 
-### Analyzing the Bundle Size
+1. Use your pseudocode to start building your base React app structure.
+2. Make an API call and create a couple pieces of static data so that you can see data retrieved (instead of making continuous calls on your api). Save those API calls for final app usage so your data shows up on the page later.
+3. Build your routes and add CSS styling.
+4. Deploy your React app!
+5. Add new features, and re-deploy!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Getting Unstuck
 
-### Making a Progressive Web App
+* **Don't hesitate to write messy code to solve short-term problems**&mdash;***Refactor later***
+* **Read the docs for whatever technologies you use**. The docs often include a tutorial that can help you get started, and learning to read documentation is _crucial_ to your success as a developer.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Asking For Help
 
-### Advanced Configuration
+### In-person Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Each student will be given 5 (five) tokens, redeemable at any time during regular
+class and Study Hall time (not including evening Office hours), for 20 minutes
+with an instructor. Tokens cannot be transferred between students - there is no
+black market for tokens.
 
-### Deployment
+Instructors will not be holding open office hours during project week. This is
+to give you the opportunity to solve issues and errors you run in to on your own
+and with your classmates. Katharyn and Hayk, however, will still hold office hours as planned.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+An instructor will be assigned to each squad and will check in with your squad
+every morning for about 15 minutes. The purpose of these check-ins is not to
+discuss technical questions, but to answer questions about workflow and get a status check-in.
 
-### `npm run build` fails to minify
+#### Maximizing Effectiveness of Support Sessions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Prior to using one of your tokens, we ***strongly recommend*** that you file an [issue ticket](https://git.generalassemb.ly/seir-ten3/project-2/issues/new) on this repository in order to both provide the instructor with a point of reference regarding your code and the issue you are having. This will enable us to give you more effective guidance.
+
+When you submit an issue please include the following:
+
+  1. A code snippet
+  2. A precise and specific description of your issue
+  3. What error you got
+  4. What you already tried to resolve your error and the result of those attempts
+
+> [Check here for details on this process](https://github.com/ga-dc/wdi12/blob/master/asking-for-help.md#during-project-weeks).
+
+We also strongly recommend **using Slack to get help from your classmates**. Chances are you all will be running into similar problems.
+
+## A Note on Plagiarism
+
+Take a moment to re-familiarize yourself with the [plagiarism policy](https://git.generalassemb.ly/seir-ten3/ten3/blob/main/plagiarism.md), specifically on using work you find online and on work you do with other students.
+
