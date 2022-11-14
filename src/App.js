@@ -9,7 +9,8 @@ import userEvent from '@testing-library/user-event';
 import axios from 'axios';
 
 const url = 'api'
-const urlTest = 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=coke&action=process&json=1&fields=product_name'
+const urlTest = 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=snickers&action=process&json=1&fields=product_name'
+const urlInput = ''
 
 function App() {
   const [food, setFood] = useState('');
