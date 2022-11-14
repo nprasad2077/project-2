@@ -33,7 +33,7 @@ function App() {
     <div>
       <Header />
       <Search />
-      <div className='testList'>
+      {/* <div className='testList'>
         <p>{food.products[0].product_name}</p>
         <p>{food.products[1].product_name}</p>
         <p>{food.products[2].product_name}</p>
@@ -57,7 +57,7 @@ function App() {
         <p>{food.products[21].product_name}</p>
         <p>{food.products[22].product_name}</p>
         <p>{food.products[23].product_name}</p>
-        </div>
+        </div> */}
     </div>
   )
 }

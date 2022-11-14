@@ -2,25 +2,28 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 
-const urlImage = 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=snickers&action=process&json=1&fields=image_url'
-const urlInput = ''
 
 
 function Search() {
   const [foodData, setFoodData] = useState('')
   const [foodSearch, setFoodSearch] = useState('');
   const [foodInput, setFoodInput]= useState('');
-  const [foodImage, setFoodImage] = useState('');
-  const [form, setForm] = useState('');
+  const urlInput = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodSearch}&action=process&json=1`
+
+
+
+  const getFoodData = () => {
+    foodSearch && 
+    axios.get (urlInput)
+    .then(res => setFoodData(res.data.products))
+    .catch(err => alert('error'))
+  }
 
   useEffect(() => {
-    axios.get(urlImage).then ((response) => {
-      setFoodData(response.data);
-      console.log('search');
-    });
-  }, []);
+    getFoodData()
+  },[foodSearch])
 
-  if (!foodData) return null;
+  
 
   const handleChange = (e) => {
     setFoodInput(e.target.value)
@@ -28,17 +31,9 @@ function Search() {
 
   const handleSubmit = () => {
     setFoodSearch(foodInput)
+    getFoodData()
+    console.log(foodData[0].product_name);
   }
-
-
-  // useEffect(() => {
-  //   axios.get(urlImage).then ((response) => {
-  //     setFoodImage(response.data);
-  //     console.log('image');
-  //   });
-  // }, []);
-
-  // if (!foodImage) return null;
 
 
 
@@ -46,19 +41,15 @@ function Search() {
 
   return (
     <div className='form'>
-      <input value={form} onChange={e => setForm(e.target.value)}></input>
-      <button>Search</button>
-      <p className='test'>
-        {form}
-      </p>
-
       <div className='search'>
         <input type='text' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Search</button>
         {' '}
-        <p>{foodSearch}</p>
+        <p>The Search Term is: {foodSearch}</p>
       </div>
-
+      {foodData && <img src={foodData[0].image_url}></img>}
+      <br></br>
+      {foodData && foodData[0].product_name}
     </div>
   )
 }
