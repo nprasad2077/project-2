@@ -3,22 +3,42 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 
 const urlImage = 'https://world.openfoodfacts.org/cgi/search.pl?search_terms=snickers&action=process&json=1&fields=image_url'
+const urlInput = ''
 
 
 function Search() {
+  const [foodData, setFoodData] = useState('')
+  const [foodSearch, setFoodSearch] = useState('');
+  const [foodInput, setFoodInput]= useState('');
   const [foodImage, setFoodImage] = useState('');
   const [form, setForm] = useState('');
 
-
-
   useEffect(() => {
     axios.get(urlImage).then ((response) => {
-      setFoodImage(response.data);
-      console.log('image');
+      setFoodData(response.data);
+      console.log('search');
     });
   }, []);
 
-  if (!foodImage) return null;
+  if (!foodData) return null;
+
+  const handleChange = (e) => {
+    setFoodInput(e.target.value)
+  }
+
+  const handleSubmit = () => {
+    setFoodSearch(foodInput)
+  }
+
+
+  // useEffect(() => {
+  //   axios.get(urlImage).then ((response) => {
+  //     setFoodImage(response.data);
+  //     console.log('image');
+  //   });
+  // }, []);
+
+  // if (!foodImage) return null;
 
 
 
@@ -28,14 +48,16 @@ function Search() {
     <div className='form'>
       <input value={form} onChange={e => setForm(e.target.value)}></input>
       <button>Search</button>
-      <p>
+      <p className='test'>
         {form}
-        <img src={foodImage.products[0].image_url}></img>
-        <img src={foodImage.products[1].image_url}></img>
-        <img src={foodImage.products[2].image_url}></img>
-        <img src={foodImage.products[3].image_url}></img>
-        <img src={foodImage.products[5].image_url}></img>
       </p>
+
+      <div className='search'>
+        <input type='text' onChange={handleChange}></input>
+        <button onClick={handleSubmit}>Search</button>
+        {' '}
+        <p>{foodSearch}</p>
+      </div>
 
     </div>
   )
