@@ -9,6 +9,8 @@ function Search() {
   const [foodSearch, setFoodSearch] = useState('');
   const [foodInput, setFoodInput]= useState('');
   const urlInput = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodSearch}&action=process&json=1`
+  const [foodList, setFoodList] = useState([]);
+  const foodDisplay = []
 
 
 
@@ -32,11 +34,14 @@ function Search() {
   const handleSubmit = () => {
     setFoodSearch(foodInput)
     getFoodData()
-    console.log(foodData[0].product_name);
   }
 
-
-
+  if (foodData) {
+    foodData.forEach((element, index, array) => {
+    foodDisplay.push(element.product_name);
+    console.log(foodDisplay);
+    });
+  }
 
 
   return (
@@ -47,9 +52,21 @@ function Search() {
         {' '}
         <p>The Search Term is: {foodSearch}</p>
       </div>
-      {foodData && <img src={foodData[0].image_url}></img>}
-      <br></br>
+      {/* {foodData && <img src={foodData[0].image_url}></img>}
       {foodData && foodData[0].product_name}
+      <br></br>
+      {foodData && <img src={foodData[1].image_url}></img>}
+      {foodData && foodData[1].product_name} */}
+
+      <div>
+        {/* {foodData && <ul>{foodDisplay.map(food => <li>{food}</li>)}</ul>} */}
+      </div>
+
+      <div>
+        {foodData && foodData.map(food => <ul>{food.product_name} <img src={food.image_url}></img></ul>)}
+      </div>
+
+    
     </div>
   )
 }
