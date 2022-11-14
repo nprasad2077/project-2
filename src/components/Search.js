@@ -63,7 +63,7 @@ function Search() {
       </div>
 
       <div>
-        {foodData && foodData.map(food => <ul>{food.product_name} <img src={food.image_url}></img></ul>)}
+        { foodData && foodData.map(food => <ul> <img src={food.image_url}></img> <br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
       </div>
 
     
