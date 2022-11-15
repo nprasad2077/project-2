@@ -37,7 +37,7 @@ function Search() {
 
   const foodClick = (e) => {
     setFoodDisplay(e.target);
-    console.log(foodDisplay.outerHTML.slice(10));
+    // console.log(foodDisplay.outerHTML.slice(10));
     handleString(foodDisplay.outerHTML)
 
   }
@@ -47,7 +47,7 @@ function Search() {
       let stringTwo = string.slice(0, -2);
       console.log(stringTwo);
       console.log(foodData.findIndex(function(data, index) {
-        if (data.brands === 'CocaCola') {
+        if (data.image_url === stringTwo) {
           return true;
         }
       }));
