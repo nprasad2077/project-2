@@ -53,6 +53,11 @@ function Search() {
           return true;
         }
       }));
+      setFoodList(foodData.findIndex(function(data, index) {
+        if (data.image_url === stringTwo) {
+          return true;
+        }
+      }))
   }
 
 
@@ -69,7 +74,7 @@ function Search() {
       <div className='foodComponents'>
         {foodData && foodData.map(food => <ul className='foodComponents' onClick={foodClick}><img src={food.image_url}></img> <br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
       </div>
-      <NutrtionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} />
+      <NutrtionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} />
     </div>
   )
 }

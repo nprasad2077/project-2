@@ -4,7 +4,9 @@ function NutritionFacts({foodData}) {
   return (
     <div className='facts'>
         <p>Energy{'(kcal/100g): '}{foodData && foodData[0].nutriments.energy}</p>
-        {/* <p>Sugars: {foodData && foodData[3].nutriments.sugars_value}</p> */}
+
+        <h5>Ingredients</h5>
+        <p>{foodData && foodData[0].ingredients_text}</p>
 
     </div>
   )
