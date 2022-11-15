@@ -2,68 +2,17 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import Header from './Header';
-import NutrtionData from './NutrtionData';
+import NutritionData from './NutritionData';
+import {Link } from "react-router-dom";
 
 
 
-function Search() {
-  const [foodData, setFoodData] = useState('')
-  const [foodSearch, setFoodSearch] = useState('');
-  const [foodInput, setFoodInput]= useState('');
-  const urlInput = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodSearch}&action=process&json=1`
-  const [foodList, setFoodList] = useState([]);
-  const [foodDisplay, setFoodDisplay] = useState('');
-
-
-
-  const getFoodData = () => {
-    foodSearch && 
-    axios.get (urlInput)
-    .then(res => setFoodData(res.data.products))
-    .catch(err => alert('error'))
-    console.log(foodData);
-  }
-
-  useEffect(() => {
-    getFoodData()
-  },[foodSearch])
-
-  const handleChange = (e) => {
-    setFoodInput(e.target.value)
-  }
-
-  const handleSubmit = () => {
-    setFoodSearch(foodInput)
-    getFoodData()
-  }
-
-  const foodClick = (e) => {
-    setFoodDisplay(e.target);
-    // console.log(foodDisplay.outerHTML.slice(10));
-    handleString(foodDisplay.outerHTML)
-
-  }
-
-  const handleString = (str) => {
-      let string = str.slice(10)
-      let stringTwo = string.slice(0, -2);
-      console.log(stringTwo);
-      console.log(foodData.findIndex(function(data, index) {
-        if (data.image_url === stringTwo) {
-          return true;
-        }
-      }));
-      setFoodList(foodData.findIndex(function(data, index) {
-        if (data.image_url === stringTwo) {
-          return true;
-        }
-      }))
-  }
+function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, foodInput, setFoodInput, urlInput, foodList, setFoodList, handleChange, handleSubmit, handleString, foodClick}) {
 
 
   return (
     <div className='form'>
-      <Header />
+      {/* <Header /> */}
       <div className='search'>
         <input type='text' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Search</button>
@@ -72,9 +21,9 @@ function Search() {
       </div>
 
       <div className='foodComponents'>
-        {foodData && foodData.map(food => <ul className='foodComponents' onClick={foodClick}><img src={food.image_url}></img> <br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
+        {foodData && foodData.map(food => <ul className='foodComponents' onClick={foodClick}><Link to={'item/' + food.id}><img src={food.image_url}></img></Link><br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
       </div>
-      <NutrtionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} />
+      {/* <NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} /> */}
     </div>
   )
 }

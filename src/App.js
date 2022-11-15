@@ -8,18 +8,71 @@ import axios from 'axios';
 //Components
 import Header from './components/Header'
 import Search from './components/Search'
-import NutrtionData from './components/NutrtionData';
+import NutritionData from './components/NutritionData';
 function App() {
+
+  const [foodData, setFoodData] = useState('')
+  const [foodSearch, setFoodSearch] = useState('');
+  const [foodInput, setFoodInput]= useState('');
+  const urlInput = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodSearch}&action=process&json=1`
+  const [foodList, setFoodList] = useState([]);
+  const [foodDisplay, setFoodDisplay] = useState('');
+
+
+
+  const getFoodData = () => {
+    foodSearch && 
+    axios.get (urlInput)
+    .then(res => setFoodData(res.data.products))
+    .catch(err => alert('error'))
+    console.log(foodData);
+  }
+
+  useEffect(() => {
+    getFoodData()
+  },[foodSearch])
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setFoodInput(e.target.value)
+  }
+
+  const handleSubmit = () => {
+    setFoodSearch(foodInput)
+    getFoodData()
+  }
+
+  const foodClick = (e) => {
+    setFoodDisplay(e.target);
+    // console.log(foodDisplay.outerHTML.slice(10));
+    handleString(foodDisplay.outerHTML)
+
+  }
+  const handleString = (str) => {
+    let string = str.slice(10)
+    let stringTwo = string.slice(0, -2);
+    console.log(stringTwo);
+    console.log(foodData.findIndex(function(data, index) {
+      if (data.image_url === stringTwo) {
+        return true;
+      }
+    }));
+    setFoodList(foodData.findIndex(function(data, index) {
+      if (data.image_url === stringTwo) {
+        return true;
+      }
+    }))
+}
   
   return (
     <div>
-      {/* <Header /> */}
-      {/* <Search /> */}
-      {/* <NutrtionData /> */}
+      <Header />
+      {/* <Search /> */} 
+     {/* <NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} /> */}
       <main>
         <Routes>
-          <Route path='/' element={ <Search />} />
-
+          <Route path='/' element={ <Search foodData={foodData} setFoodData={setFoodData} foodSearch={foodSearch} setFoodSearch={setFoodSearch} foodInput={foodInput} setFoodInput={setFoodInput} urlInput={urlInput} foodList={foodList}  setFoodList={setFoodList} foodDisplay={foodDisplay} setFoodDisplay={setFoodDisplay} getFoodData={getFoodData} handleChange={handleChange} handleSubmit={handleSubmit} foodClick={foodClick} handleString={handleString}/>} />
+          <Route path='item/:id/' element={<NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} />} />
         </Routes>
       </main>
     </div>
