@@ -10,7 +10,6 @@ function Search() {
   const [foodInput, setFoodInput]= useState('');
   const urlInput = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodSearch}&action=process&json=1`
   const [foodList, setFoodList] = useState([]);
-  // const foodDisplay = []
   const [foodDisplay, setFoodDisplay] = useState('');
 
 
@@ -27,8 +26,6 @@ function Search() {
     getFoodData()
   },[foodSearch])
 
-  
-
   const handleChange = (e) => {
     setFoodInput(e.target.value)
   }
@@ -37,13 +34,6 @@ function Search() {
     setFoodSearch(foodInput)
     getFoodData()
   }
-
-  // if (foodData) {
-  //   foodData.forEach((element, index, array) => {
-  //   foodDisplay.push(element.product_name);
-  //   console.log(foodDisplay);
-  //   });
-  // }
 
   const foodClick = (e) => {
     setFoodDisplay(e.target);
@@ -56,7 +46,11 @@ function Search() {
       let string = str.slice(10)
       let stringTwo = string.slice(0, -2);
       console.log(stringTwo);
-      console.log(foodData.indexOf('100g'));
+      console.log(foodData.findIndex(function(data, index) {
+        if (data.brands === 'CocaCola') {
+          return true;
+        }
+      }));
   }
 
 
