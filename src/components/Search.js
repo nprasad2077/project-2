@@ -10,7 +10,8 @@ function Search() {
   const [foodInput, setFoodInput]= useState('');
   const urlInput = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodSearch}&action=process&json=1`
   const [foodList, setFoodList] = useState([]);
-  const foodDisplay = []
+  // const foodDisplay = []
+  const [foodDisplay, setFoodDisplay] = useState('');
 
 
 
@@ -19,6 +20,7 @@ function Search() {
     axios.get (urlInput)
     .then(res => setFoodData(res.data.products))
     .catch(err => alert('error'))
+    console.log(foodData);
   }
 
   useEffect(() => {
@@ -36,11 +38,25 @@ function Search() {
     getFoodData()
   }
 
-  if (foodData) {
-    foodData.forEach((element, index, array) => {
-    foodDisplay.push(element.product_name);
-    console.log(foodDisplay);
-    });
+  // if (foodData) {
+  //   foodData.forEach((element, index, array) => {
+  //   foodDisplay.push(element.product_name);
+  //   console.log(foodDisplay);
+  //   });
+  // }
+
+  const foodClick = (e) => {
+    setFoodDisplay(e.target);
+    console.log(foodDisplay.outerHTML.slice(10));
+    handleString(foodDisplay.outerHTML)
+
+  }
+
+  const handleString = (str) => {
+      let string = str.slice(10)
+      let stringTwo = string.slice(0, -2);
+      console.log(stringTwo);
+      console.log(foodData.indexOf('100g'));
   }
 
 
@@ -52,18 +68,9 @@ function Search() {
         {' '}
         <p>The Search Term is: {foodSearch}</p>
       </div>
-      {/* {foodData && <img src={foodData[0].image_url}></img>}
-      {foodData && foodData[0].product_name}
-      <br></br>
-      {foodData && <img src={foodData[1].image_url}></img>}
-      {foodData && foodData[1].product_name} */}
 
-      <div>
-        {/* {foodData && <ul>{foodDisplay.map(food => <li>{food}</li>)}</ul>} */}
-      </div>
-
-      <div>
-        { foodData && foodData.map(food => <ul> <img src={food.image_url}></img> <br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
+      <div className='foodComponents'>
+        {foodData && foodData.map(food => <ul className='foodComponents' onClick={foodClick}><img src={food.image_url}></img> <br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
       </div>
 
     

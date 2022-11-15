@@ -22,3 +22,6 @@ code {
 .testList {
   text-align: center;
 }
+.foodComponent {
+  border: 2px solid black;
+}
