@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import Header from './Header';
+import NutrtionData from './NutrtionData';
 
 
 
@@ -56,6 +58,7 @@ function Search() {
 
   return (
     <div className='form'>
+      <Header />
       <div className='search'>
         <input type='text' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Search</button>
@@ -66,8 +69,7 @@ function Search() {
       <div className='foodComponents'>
         {foodData && foodData.map(food => <ul className='foodComponents' onClick={foodClick}><img src={food.image_url}></img> <br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
       </div>
-
-    
+      <NutrtionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} />
     </div>
   )
 }

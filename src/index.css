@@ -25,3 +25,10 @@ code {
 .foodComponent {
   border: 2px solid black;
 }
+.nutritionData {
+  border: 2px solid green;
+}
+
+.nova {
+  /* border: 2px solid blue */
+}
