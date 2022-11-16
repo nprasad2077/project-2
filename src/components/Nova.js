@@ -12,3 +12,4 @@ function Nova({foodData}) {
 }
 
 export default Nova
+

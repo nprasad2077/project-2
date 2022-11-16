@@ -14,23 +14,42 @@ code {
 
 .header {
   text-align: center;
+  font-size: 42px;
 }
 
 .form {
   text-align: center;
+  border: 2px solid black;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex: wrap; */
 }
-.testList {
+.search {
   text-align: center;
 }
+
 .foodComponent {
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 .nutritionData {
-  border: 2px solid green;
   text-align: center;
+  margin: 10px;
 }
 
 .nova {
   /* border: 2px solid blue */
 }
 
+.nav {
+  text-align: center;
+}
+
+.numberAdd{
+  margin-top: 10px;
+}
+
+.index {
+  margin: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}

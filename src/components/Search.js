@@ -12,7 +12,6 @@ function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, 
 
   return (
     <div className='form'>
-      {/* <Header /> */}
       <div className='search'>
         <input type='text' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Search</button>
@@ -23,7 +22,6 @@ function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, 
       <div className='foodComponents'>
         {foodData && foodData.map(food => <ul className='foodComponents' onClick={foodClick}><Link to={'item/' + food.id}><img src={food.image_url}></img></Link><br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
       </div>
-      {/* <NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} /> */}
     </div>
   )
 }

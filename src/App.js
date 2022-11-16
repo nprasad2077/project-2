@@ -9,6 +9,9 @@ import axios from 'axios';
 import Header from './components/Header'
 import Search from './components/Search'
 import NutritionData from './components/NutritionData';
+import Footer from './components/Footer';
+
+
 function App() {
 
   const [foodData, setFoodData] = useState('')
@@ -67,8 +70,7 @@ function App() {
   return (
     <div>
       <Header />
-      {/* <Search /> */} 
-     {/* <NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} /> */}
+      {/* <Footer /> */}
       <main>
         <Routes>
           <Route path='/' element={ <Search foodData={foodData} setFoodData={setFoodData} foodSearch={foodSearch} setFoodSearch={setFoodSearch} foodInput={foodInput} setFoodInput={setFoodInput} urlInput={urlInput} foodList={foodList}  setFoodList={setFoodList} foodDisplay={foodDisplay} setFoodDisplay={setFoodDisplay} getFoodData={getFoodData} handleChange={handleChange} handleSubmit={handleSubmit} foodClick={foodClick} handleString={handleString}/>} />
