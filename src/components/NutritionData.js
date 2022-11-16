@@ -15,6 +15,9 @@ function NutritionData({foodData}) {
     }
   });
 
+  const ecoCapital = (foodData && foodData[index].ecoscore_grade).toUpperCase();
+  const removeAllergen = (foodData && foodData[index].additives_tags).slice(0,3)
+
 
   return (
     <div className='nutritionData'>
@@ -51,7 +54,7 @@ function NutritionData({foodData}) {
 
       <div>
         <h3>EcoScore</h3>
-        <p>EcoScore Grade: {foodData && foodData[index].ecoscore_grade}</p>
+        <p>EcoScore Grade: {foodData && ecoCapital}</p>
         <p>EcoScore Score: {foodData && foodData[index].ecoscore_score} </p>
 
       </div>
@@ -60,7 +63,7 @@ function NutritionData({foodData}) {
         <h3>Nutrition Facts{'(100g)'}</h3>
         <p>Energy: {foodData && foodData[index].nutriments.energy_100g}</p>
         <p>Sugars: {foodData && foodData[index].nutriments.sugars_100g}</p>
-        <p>Proteins {foodData && foodData[index].nutriments.proteins_100g}</p>
+        <p>Proteins: {foodData && foodData[index].nutriments.proteins_100g}</p>
         <p>Sodium: {foodData && foodData[index].nutriments.sodium_100g}</p>
         <p>Fat: {foodData && foodData[index].nutriments.fat_100g}</p>
         <p>Carbohydrates: {foodData && foodData[index].nutriments.carbohydrates_100g}</p>

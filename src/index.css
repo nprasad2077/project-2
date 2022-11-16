@@ -61,3 +61,20 @@ code {
 .aboutHeader {
   font-style: italic;
 }
+
+a:visited, a:link {
+  background-color: lightblue;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+.allergens {
+  color: red
+}
