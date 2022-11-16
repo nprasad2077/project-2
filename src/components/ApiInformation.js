@@ -6,7 +6,8 @@ function ApiInformation() {
     <div>API Information
 
 
-        <Link to='about/'>About Me</Link>
+        <Link to='/about/'>About Me</Link>
+        <Link to='/'>Back to Search</Link>
     </div>
   )
 }
