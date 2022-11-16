@@ -3,20 +3,26 @@ import { useParams } from 'react-router-dom'
 import Nova from './Nova'
 import Vegan from './Vegan'
 import NutriScore from './NutriScore'
+import Images from './Images'
 
 import NutritionFacts from './NutritionFacts'
 import {Link } from "react-router-dom";
 
-function NutritionData({foodData}) {
+function NutritionData({foodData, setImage, image}) {
   const {id} = useParams();
+
   const index = foodData.findIndex(function(data, index){
     if (data.id === id) {
       return true;
     }
   });
 
+  setImage(index)
+  console.log(image);
+
+
+
   const ecoCapital = (foodData && foodData[index].ecoscore_grade).toUpperCase();
-  const removeAllergen = (foodData && foodData[index].additives_tags).slice(0,3)
 
 
   return (
@@ -26,14 +32,14 @@ function NutritionData({foodData}) {
       <div>
         Brands: {foodData && foodData[index].brands}
       </div>
+      <br></br>
+      <div>
+        Origin Countries: {foodData && foodData[index].countries}
+      </div>
 
       <br></br>
 
       <img className='imageInfo' src={foodData && foodData[index].image_url}></img>
-
-      <p>The id is: {id}</p>
-
-      <span className='index'>The Index is: {index}</span>
 
       <div>
         Ingredients: {foodData && foodData[index].ingredients_text}
@@ -71,6 +77,8 @@ function NutritionData({foodData}) {
         <Nova foodData={foodData} index={index}/>
         <Vegan foodData={foodData} index={index}/>
         <NutriScore foodData={foodData} index={index}/>
+      
+        <Link to='images/'><p>Images</p></Link>
 
       </div>
       <Link to='/'><p>Back to Search</p></Link>

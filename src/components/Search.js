@@ -21,11 +21,10 @@ function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, 
         <p>The Search Term is: {foodSearch}</p>
       </div>
 
-      <div className='foodComponents'>
-        {foodData && foodData.map(food => <ul className='foodComponents' onClick={foodClick}><Link to={'item/' + food.id}><img src={food.image_url}></img></Link><br></br> {food.product_name} <br></br> {food.serving_size} </ul>)}
+      <div className='masterFood'>
+        {foodData && foodData.map(food => <div className='foodComponents' onClick={foodClick}><Link to={'item/' + food.id}><img src={food.image_url}></img></Link><br></br> {food.product_name} <br></br> {food.serving_size} </div>)}
       </div>
       <Link to='about/'>About Me</Link>
-      {/* <Link to='apiinfo/'>API Information</Link> */}
     </div>
   )
 }

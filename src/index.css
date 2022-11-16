@@ -28,8 +28,14 @@ code {
   text-align: center;
 }
 
-.foodComponent {
+.foodComponents {
   /* border: 2px solid black; */
+  flex-basis: 24%;
+}
+
+.masterFood{
+  display: flex;
+  flex-wrap: wrap;
 }
 .nutritionData {
   text-align: center;
@@ -77,4 +83,11 @@ a:hover, a:active {
 
 .allergens {
   color: red
+}
+
+.images {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  flex-direction: column;
 }
