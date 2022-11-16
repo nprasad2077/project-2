@@ -12,14 +12,26 @@ code {
     monospace;
 }
 
+html {
+  background-color: tan;
+}
+
+.app {
+  background-color: tan;
+}
+.headerMain {
+  background-color: tan;
+}
+
 .header {
   text-align: center;
   font-size: 42px;
+  /* background-color: tan; */
 }
 
 .form {
   text-align: center;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   /* display: flex; */
   /* flex-direction: row; */
   /* flex: wrap; */
@@ -81,13 +93,20 @@ a:hover, a:active {
   background-color: red;
 }
 
+.linky:visited, .linky:hover, .linky:link, .linky:active {
+  color: black;
+  background-color:tan
+  
+}
+
 .allergens {
   color: red
 }
 
 .images {
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   justify-content: space-between;
-  flex-direction: column;
+  /* flex-direction: column; */
+  margin: 10px
 }

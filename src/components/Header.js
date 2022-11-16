@@ -3,12 +3,8 @@ import {Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div>
+    <div className='headerMain'>
         <h1 className='header'>Nutri-Scan</h1>
-
-        <nav className='nav'>
-          {/* <Link to='/'><p>Back to Search</p></Link> */}
-        </nav>
     </div>
   )
 }
