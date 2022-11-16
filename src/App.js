@@ -10,6 +10,8 @@ import Header from './components/Header'
 import Search from './components/Search'
 import NutritionData from './components/NutritionData';
 import Footer from './components/Footer';
+import AboutMe from './components/AboutMe';
+import ApiInformation from './components/ApiInformation'
 
 
 function App() {
@@ -75,6 +77,8 @@ function App() {
         <Routes>
           <Route path='/' element={ <Search foodData={foodData} setFoodData={setFoodData} foodSearch={foodSearch} setFoodSearch={setFoodSearch} foodInput={foodInput} setFoodInput={setFoodInput} urlInput={urlInput} foodList={foodList}  setFoodList={setFoodList} foodDisplay={foodDisplay} setFoodDisplay={setFoodDisplay} getFoodData={getFoodData} handleChange={handleChange} handleSubmit={handleSubmit} foodClick={foodClick} handleString={handleString}/>} />
           <Route path='item/:id/' element={<NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} />} />
+          <Route path='about/' element ={<AboutMe />} />
+          <Route path='about/apiinfo/' element={<ApiInformation />} />
         </Routes>
       </main>
     </div>

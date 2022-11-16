@@ -1,6 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import Nova from './Nova'
+import Vegan from './Vegan'
+import NutriScore from './NutriScore'
+
 import NutritionFacts from './NutritionFacts'
 import {Link } from "react-router-dom";
 
@@ -61,6 +64,10 @@ function NutritionData({foodData}) {
         <p>Sodium: {foodData && foodData[index].nutriments.sodium_100g}</p>
         <p>Fat: {foodData && foodData[index].nutriments.fat_100g}</p>
         <p>Carbohydrates: {foodData && foodData[index].nutriments.carbohydrates_100g}</p>
+
+        <Nova foodData={foodData} index={index}/>
+        <Vegan foodData={foodData} index={index}/>
+        <NutriScore foodData={foodData} index={index}/>
 
       </div>
       <Link to='/'><p>Back to Search</p></Link>

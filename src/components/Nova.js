@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Nova({foodData}) {
+function Nova({foodData, index}) {
 
 
   return (
     <div className='nova'>
-        NOVA score is {foodData && foodData[0].nova_group}
+        NOVA score is {foodData && foodData[index].nova_group}
 
     </div>
   )
