@@ -163,15 +163,17 @@ a:hover, a:active , .back-button:hover, .back-button:active{
 }
 
 .allergens {
-  color: green;
-  font-weight: 700px;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .images {
+  min-width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
-  /* flex-direction: column; */
+  flex-direction: column;
   margin: 10px
 }
 
@@ -201,4 +203,10 @@ a:hover, a:active , .back-button:hover, .back-button:active{
 
 img {
   max-width: 100%;
+}
+.nutriScore, .eco-score, .nutri-levels, .additives {
+  border: 2px solid white;
+}
+.bold {
+  font-weight: bold;
 }

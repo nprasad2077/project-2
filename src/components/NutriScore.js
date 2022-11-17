@@ -10,7 +10,7 @@ function NutriScore({foodData, index}) {
 
 
   return (
-    <div>
+    <div className='nutriScore'>
         <h3>Nutriscore Data</h3>
         <p>NutriScore Grade: {foodData && capitalGrade}</p>
         <p>Energy: {foodData && foodData[index].nutriscore_data.energy}</p>

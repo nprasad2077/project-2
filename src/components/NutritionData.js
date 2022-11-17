@@ -7,7 +7,6 @@ import Images from './Images'
 import NutritionFacts from './NutritionFacts'
 import EcoScore from './EcoScore'
 import NutriLevels from './NutriLevels'
-
 import {Link } from "react-router-dom";
 
 function NutritionData({foodData, setImage, image}) {
@@ -20,7 +19,7 @@ function NutritionData({foodData, setImage, image}) {
   });
 
   setImage(index)
-  console.log(image);
+  // console.log(image);
 
 
 
@@ -48,7 +47,7 @@ function NutritionData({foodData, setImage, image}) {
       </div>
 
       <div className='allergens'>
-        Allergens: {foodData && foodData[index].allergens_imported}
+        Allergens: {foodData && + foodData[index].allergens_imported}
       </div>
 
       <div className='numberAdd'>
@@ -62,7 +61,7 @@ function NutritionData({foodData, setImage, image}) {
       <div className='components'>
         <EcoScore foodData={foodData} index={index} ecoCapital={ecoCapital}/>
         <NutritionFacts foodData={foodData} index={index} />
-        <NutriScore className='nutriScore' foodData={foodData} index={index}/>
+        <NutriScore foodData={foodData} index={index}/>
         <NutriLevels foodData={foodData} index={index}/>
       </div>
 
