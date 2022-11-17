@@ -16,7 +16,9 @@ function NutriLevels({foodData, index}) {
       <div className='sugar-levels'>
         <span className='bold'>Sugars:</span> {foodData && foodData[index].nutrient_levels.sugars}
       </div>
-        {/* {foodData && foodData[index].nutrient_levels.saturated} */}
+      <div>
+        <span className='bold'>Saturated Fats:</span> {foodData && foodData[index].nutrient_levels['saturated-fat']}
+      </div>
     </div>
   )
 }
