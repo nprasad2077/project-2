@@ -9,7 +9,7 @@ import EcoScore from './EcoScore'
 import NutriLevels from './NutriLevels'
 import {Link } from "react-router-dom";
 
-function NutritionData({foodData, setImage, image}) {
+function NutritionData({foodData, setImage}) {
   const {id} = useParams();
 
   const index = foodData.findIndex(function(data, index){
@@ -18,8 +18,7 @@ function NutritionData({foodData, setImage, image}) {
     }
   });
 
-  setImage(index)
-  // console.log(image);
+  setImage(index);
 
 
 

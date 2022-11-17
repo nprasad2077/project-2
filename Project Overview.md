@@ -24,17 +24,20 @@ Define the the React components and the architectural design of your app.
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decide what is placed into your MVP as the "client" will expect this functionality to be implemented upon project completion.  
 
-#### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
-- Access the [Open Food Facts API](https://world.openfoodfacts.org/)
-- Render data on page 
-- Allow user to interact with the page
+#### MVP
 
-#### PostMVP EXAMPLE
+-  Access the [Open Food Facts API](https://world.openfoodfacts.org/)
+- User is able to search for product by name or UPC code.
+- Images of product are rendered onto the page for selection. 
+- User is able to view details for each food product.
 
-- Add localStorage or firebase (or similar) for storage
+#### PostMVP
+
+- Add styling to nutrition components.
+- Add literature/definitions about data values.
+- Incorporate assets for visual clarifiction.
+- Sort feature
+- Add/remove components
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
@@ -52,27 +55,48 @@ Based on the initial logic defined in the previous sections try and breakdown th
 Time frames are also key in the development cycle.  You have limited time to code all phases of the project.  Your estimates can then be used to evaluate project possibilities based on time needed and the actual time you have before the project must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add an additional hour or two to each component to play it safe. 
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| ------ | :---: |  :---: | :---: | :---: |
+| Testing API | H | 2hr | 4hrs | 4hrs |
+| Creating react component structure | H | 3hrs| 2hrs | 2hrs |
+| Creating search input | H | 3.5hrs| 6hrs | 6hrs |
+| 'Mapping' out search results | H | 2hr | 1hrs | 1hrs |
+| Creating/Implementing 'state' | H | 3hr | 2hrs | 2hrs |
+| Product details page | H | 2hr | 4hrs | 4hrs |
+| Routing | H | 1hr | 2hrs | 2hrs |
+| Styling | H | 2hr | 2hrs | 2hrs |
+| Total | H | 18.5hrs| 23hrs | 23hrs |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and their role in the project such as Axios, ReactStrap, D3, Bootstrap, Tailwind CSS, etc. 
+Axios
 
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  Code snippet should not be greater than 10 lines of code. 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+function NutritionData({foodData, setImage}) {
+  const {id} = useParams();
+
+  const index = foodData.findIndex(function(data, index){
+    if (data.id === id) {
+      return true;
+    }
+  });
+
+  setImage(index);
 ```
+
+This snippet of code is used to identify the index position of the current product in the array of data from the API call. The code grabs the 'id' of the product from the url with 'useParams()'. Then, 'findIndex()' is used to determine the index position based off the food product ID. Finally, setState is used to pass the index value to to be used in any other component.
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
 
 #### SAMPLE.....
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**RESOLUTION**: Missing comma after first object in sources {} object
+
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**RESOLUTION**: Missing comma after first object in sources {} object
+
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
 **RESOLUTION**: Missing comma after first object in sources {} object
