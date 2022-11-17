@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, useNavigate} from "react-router-dom";
 // import userEvent from '@testing-library/user-event';
 import axios from 'axios';
 //Components
@@ -25,6 +25,7 @@ function App() {
   const [foodList, setFoodList] = useState([]);
   const [foodDisplay, setFoodDisplay] = useState('');
   const [image, setImage] = useState('')
+  const navigate = useNavigate();
 
 
 
@@ -65,7 +66,7 @@ function App() {
           <Route path='item/:id/' element={<NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} image={image} setImage={setImage} />} />
           <Route path='about/' element ={<AboutMe />} />
           <Route path='about/apiinfo/' element={<ApiInformation />} />
-          <Route path='item/:id/images/' element={<Images foodData={foodData} image={image} />} />
+          <Route path='item/:id/images/' element={<Images foodData={foodData} image={image} navigate={navigate} />} />
         </Routes>
       </main>
     </div>
