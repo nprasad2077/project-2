@@ -13,20 +13,21 @@ code {
 }
 
 html {
-  background-color: tan;
+  background-color: #22333b;
+  color: white
 }
 
-.app {
+/* .app {
   background-color: tan;
 }
 .headerMain {
   background-color: tan;
-}
+} */
 
 .header {
   text-align: center;
   font-size: 42px;
-  /* background-color: tan; */
+  color: white
 }
 
 .form {
@@ -49,9 +50,65 @@ html {
   display: flex;
   flex-wrap: wrap;
 }
+
+/* .productName {
+  grid-area: header;
+}
+
+.brands { 
+  grid-area: header
+}
+
+.imageInfo {
+  grid-area: main;
+}
+
+.ingredients {
+  grid-area: sidebar;
+}
+
+.allergens, .numberAdd, .additives {
+  grid-area: sidebar2;
+}
+
+.eco-score {
+  grid-area: footer;
+}
+
+.nutriFacts {
+  grid-area: footer2;
+}
+
 .nutritionData {
   text-align: center;
   margin: 10px;
+  border: 2px solid white;
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "header header header header"
+  "main main sidebar sidebar2"
+  "footer footer footer2 footer2";
+
+} */
+
+
+.nutriFacts {
+  border: 2px white solid;
+}
+
+
+
+
+
+.nutritionData {
+  display: flex;
+  border: 2px white solid;
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .nova {
@@ -81,7 +138,7 @@ html {
 }
 
 a:visited, a:link {
-  background-color: lightblue;
+  background-color: #656d4a;
   color: white;
   padding: 5px 20px;
   text-align: center;
@@ -95,7 +152,7 @@ a:hover, a:active {
 
 .linky:visited, .linky:hover, .linky:link, .linky:active {
   color: black;
-  background-color:tan
+  background-color: #a9927d
   
 }
 
@@ -109,4 +166,28 @@ a:hover, a:active {
   justify-content: space-between;
   /* flex-direction: column; */
   margin: 10px
+}
+
+.aboutHome {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.aboutLink {
+  width: 15%;
+  margin-left: 40%;
+  margin-top: 30px
+}
+
+.api-info {
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
 }

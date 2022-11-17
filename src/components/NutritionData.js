@@ -27,9 +27,9 @@ function NutritionData({foodData, setImage, image}) {
 
   return (
     <div className='nutritionData'>
-      <h1>{foodData && foodData[index].product_name}</h1>
+      <h1 className='productName'>{foodData && foodData[index].product_name}</h1>
 
-      <div>
+      <div className='brands'>
         Brands: {foodData && foodData[index].brands}
       </div>
       <br></br>
@@ -41,7 +41,7 @@ function NutritionData({foodData, setImage, image}) {
 
       <img className='imageInfo' src={foodData && foodData[index].image_url}></img>
 
-      <div>
+      <div className='ingredients'>
         Ingredients: {foodData && foodData[index].ingredients_text}
       </div>
 
@@ -53,19 +53,19 @@ function NutritionData({foodData, setImage, image}) {
         Number of food addivites: {foodData && foodData[index].additives_n}
       </div>
 
-      <div>
+      <div className='additives'>
         Additives: {foodData && foodData[index].additives_tags}
       </div>
 
 
-      <div>
+      <div className='eco-score'>
         <h3>EcoScore</h3>
         <p>EcoScore Grade: {foodData && ecoCapital}</p>
         <p>EcoScore Score: {foodData && foodData[index].ecoscore_score} </p>
 
       </div>
 
-      <div>
+      <div className='nutriFacts'>
         <h3>Nutrition Facts{'(100g)'}</h3>
         <p>Energy: {foodData && foodData[index].nutriments.energy_100g}</p>
         <p>Sugars: {foodData && foodData[index].nutriments.sugars_100g}</p>
@@ -73,14 +73,13 @@ function NutritionData({foodData, setImage, image}) {
         <p>Sodium: {foodData && foodData[index].nutriments.sodium_100g}</p>
         <p>Fat: {foodData && foodData[index].nutriments.fat_100g}</p>
         <p>Carbohydrates: {foodData && foodData[index].nutriments.carbohydrates_100g}</p>
+      </div>
 
-        <Nova foodData={foodData} index={index}/>
-        <Vegan foodData={foodData} index={index}/>
-        <NutriScore foodData={foodData} index={index}/>
+        {/* <Nova className='nova' foodData={foodData} index={index}/> */}
+        {/* <Vegan foodData={foodData} index={index}/> */}
+        <NutriScore className='nutriScore' foodData={foodData} index={index}/>
       
         <Link to='images/'><p>Images</p></Link>
-
-      </div>
       <Link to='/'><p>Back to Search</p></Link>
     </div>
   )

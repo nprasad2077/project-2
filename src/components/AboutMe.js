@@ -10,8 +10,8 @@ function AboutMe() {
 
 
 
-      <Link to='/'>Back to Search</Link>
-      <Link to='apiinfo/'>API Information</Link>
+      <Link className='aboutLink' to='/'>Back to Search</Link>
+      <Link className='aboutLink' to='apiinfo/'>API Information</Link>
     </div>
   )
 }

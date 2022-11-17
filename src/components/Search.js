@@ -18,13 +18,13 @@ function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, 
         <input type='text' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Search</button>
         {' '}
-        <p>The Search Term is: {foodSearch}</p>
+        {/* <p>The Search Term is: {foodSearch}</p> */}
       </div>
 
       <div className='masterFood'>
         {foodData && foodData.map(food => <div className='foodComponents' onClick={foodClick}><Link className='linky' to={'item/' + food.id}><img src={food.image_url}></img></Link><br></br> {food.product_name} <br></br> {food.serving_size} </div>)}
       </div>
-      <Link to='about/'>About Me</Link>
+      <Link className='aboutHome' to='about/'>About Me</Link>
     </div>
   )
 }

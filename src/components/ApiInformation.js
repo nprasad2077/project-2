@@ -3,11 +3,11 @@ import {Link } from "react-router-dom";
 
 function ApiInformation() {
   return (
-    <div>API Information
+    <div className='api-info'>API Information
 
 
-        <Link to='/about/'>About Me</Link>
-        <Link to='/'>Back to Search</Link>
+        <Link className='aboutLink' to='/about/'>About Me</Link>
+        <Link className='aboutLink' to='/'>Back to Search</Link>
     </div>
   )
 }
