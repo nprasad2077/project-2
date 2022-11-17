@@ -6,6 +6,7 @@ import NutriScore from './NutriScore'
 import Images from './Images'
 import NutritionFacts from './NutritionFacts'
 import EcoScore from './EcoScore'
+import NutriLevels from './NutriLevels'
 
 import {Link } from "react-router-dom";
 
@@ -58,11 +59,12 @@ function NutritionData({foodData, setImage, image}) {
         Additives: {foodData && foodData[index].additives_tags}
       </div>
 
-      <EcoScore foodData={foodData} index={index} ecoCapital={ecoCapital}/>
-
-      <NutritionFacts foodData={foodData} index={index} />
-
-      <NutriScore className='nutriScore' foodData={foodData} index={index}/>
+      <div className='components'>
+        <EcoScore foodData={foodData} index={index} ecoCapital={ecoCapital}/>
+        <NutritionFacts foodData={foodData} index={index} />
+        <NutriScore className='nutriScore' foodData={foodData} index={index}/>
+        <NutriLevels foodData={foodData} index={index}/>
+      </div>
 
         {/* <Nova className='nova' foodData={foodData} index={index}/> */}
         {/* <Vegan foodData={foodData} index={index}/> */}

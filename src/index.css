@@ -163,7 +163,8 @@ a:hover, a:active , .back-button:hover, .back-button:active{
 }
 
 .allergens {
-  color: red
+  color: green;
+  font-weight: 700px;
 }
 
 .images {
