@@ -32,10 +32,10 @@ html {
 
 .form {
   text-align: center;
+  align-items: center;
   /* border: 2px solid black; */
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex: wrap; */
+  display: flex;
+  flex-direction: column;
 }
 .search {
   text-align: center;
@@ -103,7 +103,7 @@ html {
   border: 2px white solid;
 }
 
-.nutritionData {
+/* .nutritionData {
   display: flex;
   border: 2px white solid;
   flex-direction: column;
@@ -111,7 +111,7 @@ html {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 .nova {
   /* border: 2px solid blue */
@@ -139,7 +139,7 @@ html {
   font-style: italic;
 }
 
-a:visited, a:link, .back-button:visited, .back-button:link {
+a:visited, a:link, .back-button:visited, .back-button:link, .linky:visited, .linky:link, button:visited {
   background-color: #656d4a;
   color: white;
   padding: 5px 20px;
@@ -148,19 +148,16 @@ a:visited, a:link, .back-button:visited, .back-button:link {
   display: inline-block;
 }
 
-a:hover, a:active , .back-button:hover, .back-button:active{
+a:hover, a:active , .back-button:hover, .back-button:active, .linky:hover, .linky:active {
   background-color: red;
 }
 
-.linky:visited, .linky:hover, .linky:link, .linky:active {
+/* .linky:visited, .linky:hover, .linky:link, .linky:active {
   color: black;
   background-color: #a9927d
   
-}
+} */
 
-.back-button {
-  /* color: white; */
-}
 
 .allergens {
   color: red;
@@ -203,10 +200,46 @@ a:hover, a:active , .back-button:hover, .back-button:active{
 
 img {
   max-width: 100%;
+  align-self: center;
 }
-.nutriScore, .eco-score, .nutri-levels, .additives {
+.nutriScore, .components, .first-component {
   border: 2px solid white;
 }
 .bold {
   font-weight: bold;
+}
+.components {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+
+}
+.grid-components {
+  flex-basis: 25%;
+
+}
+.first-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.nutritionData {
+
+}
+.nutrition-links {
+  text-align: center;
+}
+
+.imageInfo, .additives, .components {
+  margin-bottom: 15px;
+}
+
+.nutri-levels {
+  margin: 5px;
+}
+
+.fat-levels, .salt-levels, .sugar-levels, .sat-fat-levels {
+  margin: 5px;
 }

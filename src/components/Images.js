@@ -11,8 +11,8 @@ function Images({foodData, image, navigate}) {
       <img className='imageInfo' src={foodData && foodData[image].image_nutrition_url}></img>
       <img className='imageInfo' src={foodData && foodData[image].image_packaging_url}></img>
       <form>
-        <input className='back-button' type='button' value='Back to Nutrition Data' onClick={() => navigate(-1)}></input>
-        <input className='back-button' type='button' value='Back to Search Results' onClick={() => navigate('/', {replace: true})}></input>
+        <input className='linky' type='button' value='Back to Nutrition Data' onClick={() => navigate(-1)}></input>
+        <input className='linky' type='button' value='Back to Search Results' onClick={() => navigate('/', {replace: true})}></input>
       </form>
     </div>
   )

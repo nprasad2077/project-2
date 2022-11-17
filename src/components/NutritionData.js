@@ -27,27 +27,31 @@ function NutritionData({foodData, setImage}) {
 
   return (
     <div className='nutritionData'>
-      <h1 className='productName'>{foodData && foodData[index].product_name}</h1>
 
-      <div className='brands'>
-        Brands: {foodData && foodData[index].brands}
-      </div>
-      <br></br>
-      <div>
-        Origin Countries: {foodData && foodData[index].countries}
-      </div>
+      <div className='first-component'>
 
-      <br></br>
 
-      <img className='imageInfo' src={foodData && foodData[index].image_url}></img>
+        <h1 className='productName'>{foodData && foodData[index].product_name}</h1>
 
-      <div className='ingredients'>
-        Ingredients: {foodData && foodData[index].ingredients_text}
-      </div>
+        <div className='brands'>
+          Brands: {foodData && foodData[index].brands}
+        </div>
+        <br></br>
+        <div>
+          Origin Countries: {foodData && foodData[index].countries}
+        </div>
 
-      <div className='allergens'>
-        Allergens: {foodData && + foodData[index].allergens_imported}
-      </div>
+        <br></br>
+
+        <img className='imageInfo' src={foodData && foodData[index].image_url}></img>
+
+        <div className='ingredients'>
+          Ingredients: {foodData && foodData[index].ingredients_text}
+        </div>
+
+        <div className='allergens'>
+          Allergens: {foodData && + foodData[index].allergens_imported}
+        </div>
 
       <div className='numberAdd'>
         Number of food addivites: {foodData && foodData[index].additives_n}
@@ -56,20 +60,31 @@ function NutritionData({foodData, setImage}) {
       <div className='additives'>
         Additives: {foodData && foodData[index].additives_tags}
       </div>
+    
+    </div>
 
       <div className='components'>
-        <EcoScore foodData={foodData} index={index} ecoCapital={ecoCapital}/>
-        <NutritionFacts foodData={foodData} index={index} />
-        <NutriScore foodData={foodData} index={index}/>
-        <NutriLevels foodData={foodData} index={index}/>
+          <div className='grid-components'>
+            <EcoScore foodData={foodData} index={index} ecoCapital={ecoCapital}/>
+          </div>
+          <div className='grid-components'>
+            <NutritionFacts foodData={foodData} index={index} />
+          </div>
+          <div className='grid-components'>
+            <NutriScore foodData={foodData} index={index}/>
+          </div>
+          <div className='grid-components'>
+            <NutriLevels foodData={foodData} index={index}/>
+          </div>
       </div>
 
         {/* <Nova className='nova' foodData={foodData} index={index}/> */}
         {/* <Vegan foodData={foodData} index={index}/> */}
   
-      
-      <Link to='images/'><p>Images</p></Link>
-      <Link to='/'><p>Back to Search</p></Link>
+      <div className='nutrition-links'>
+        <Link to='images/'><p>Images</p></Link>
+        <Link to='/'><p>Back to Search</p></Link>
+      </div>
     </div>
   )
 }

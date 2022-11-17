@@ -9,10 +9,8 @@ import axios from 'axios';
 import Header from './components/Header'
 import Search from './components/Search'
 import NutritionData from './components/NutritionData';
-import Footer from './components/Footer';
 import AboutMe from './components/AboutMe';
 import ApiInformation from './components/ApiInformation'
-import Chart from './components/Chart'
 import Images from './components/Images'
 
 
@@ -27,6 +25,9 @@ function App() {
   const [image, setImage] = useState('')
   const navigate = useNavigate();
 
+  function reload() {
+    window.location.reload(false);
+  }
 
 
   const getFoodData = () => {
@@ -62,7 +63,7 @@ function App() {
       
       <main>
         <Routes>
-          <Route path='/' element={ <Search foodData={foodData} setFoodData={setFoodData} foodSearch={foodSearch} setFoodSearch={setFoodSearch} foodInput={foodInput} setFoodInput={setFoodInput} urlInput={urlInput} foodList={foodList}  setFoodList={setFoodList} foodDisplay={foodDisplay} setFoodDisplay={setFoodDisplay} getFoodData={getFoodData} handleChange={handleChange} handleSubmit={handleSubmit} foodClick={foodClick}/>} />
+          <Route path='/' element={ <Search foodData={foodData} setFoodData={setFoodData} foodSearch={foodSearch} setFoodSearch={setFoodSearch} foodInput={foodInput} setFoodInput={setFoodInput} urlInput={urlInput} foodList={foodList}  setFoodList={setFoodList} foodDisplay={foodDisplay} setFoodDisplay={setFoodDisplay} getFoodData={getFoodData} handleChange={handleChange} handleSubmit={handleSubmit} foodClick={foodClick} reload={reload}/>} />
           <Route path='item/:id/' element={<NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} image={image} setImage={setImage} />} />
           <Route path='about/' element ={<AboutMe />} />
           <Route path='about/apiinfo/' element={<ApiInformation />} />
