@@ -44,10 +44,10 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Component | Description | 
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
-| Header | This will render the header, include the nav | 
-| Search | This will render the footer, include links to github repo | 
-| NutritionData | This will render the header, include the nav |
-| EcoScore | This will render the header, include the nav |
+| Header | This will render the header/title | 
+| Search | This hold the input, submit button, and search results. | 
+| NutritionData | The main component for product details |
+| EcoScore | EcoScore |
 | NutritionFacts | Nutrition facts |
 | NutriScore | NutriScore and points |
 | NutriLevels | Levels of fat, salt, sugars, and saturated fats |
@@ -55,8 +55,6 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | About Me | Information about this project | 
 
 ## Time Frames
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the project.  Your estimates can then be used to evaluate project possibilities based on time needed and the actual time you have before the project must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add an additional hour or two to each component to play it safe. 
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | ------ | :---: |  :---: | :---: | :---: |
@@ -99,6 +97,3 @@ This snippet of code is used to identify the index position of the current produ
 
 **ERROR**:./src/components/NutriLevels.js:9 TypeError: Cannot read properties of undefined (reading 'nutrient_levels')
 **RESOLUTION**: Missing brackets when passing in variables from NutritionData component.
-
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
