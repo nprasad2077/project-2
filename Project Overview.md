@@ -89,14 +89,12 @@ function NutritionData({foodData, setImage}) {
 This snippet of code is used to identify the index position of the current product in the array of data from the API call. The code grabs the 'id' of the product from the url with 'useParams()'. Then, 'findIndex()' is used to determine the index position based off the food product ID. Finally, setState is used to pass the index value to to be used in any other component.
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**: ./src/components/NutriLevels.js:20 fat is not defined no-undef
+**RESOLUTION**: Use ['saturated-fat'] instead of {.saturated-fat} in the variable. The hyphen will not be recognized and break the code.
 
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**:./src/components/NutriLevels.js:9 TypeError: Cannot read properties of undefined (reading 'nutrient_levels')
+**RESOLUTION**: Missing brackets when passing in variables from NutritionData component.
 
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
 **RESOLUTION**: Missing comma after first object in sources {} object
