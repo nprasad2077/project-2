@@ -13,12 +13,9 @@ Use this section to describe your final project and perhaps any links to relevan
 
 ## Wireframes & React Component Hierarchy
 
-Upload images of wireframes and component hierarchy to cloudinary (or similar) and add the link here with a description of the specific wireframe.
-
 - [wireframes](https://media.git.generalassemb.ly/user/45667/files/a2a9f73f-4a78-45b7-9aa3-10a932a62bf3)
 - [react architecture](https://media.git.generalassemb.ly/user/45667/files/dbb54739-78e3-43c0-826e-7c66794848c7)
 
-Define the the React components and the architectural design of your app.
 
 ### MVP/PostMVP
 
@@ -48,7 +45,14 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
 | Header | This will render the header, include the nav | 
-| Footer | This will render the footer, include links to github repo | 
+| Search | This will render the footer, include links to github repo | 
+| NutritionData | This will render the header, include the nav |
+| EcoScore | This will render the header, include the nav |
+| NutritionFacts | Nutrition facts |
+| NutriScore | NutriScore and points |
+| NutriLevels | Levels of fat, salt, sugars, and saturated fats |
+| ApiInformation | Information and reference to Open Food Facts api | 
+| About Me | Information about this project | 
 
 ## Time Frames
 
