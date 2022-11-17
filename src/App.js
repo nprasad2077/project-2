@@ -9,10 +9,8 @@ import axios from 'axios';
 import Header from './components/Header'
 import Search from './components/Search'
 import NutritionData from './components/NutritionData';
-import Footer from './components/Footer';
 import AboutMe from './components/AboutMe';
 import ApiInformation from './components/ApiInformation'
-import Chart from './components/Chart'
 import Images from './components/Images'
 
 
