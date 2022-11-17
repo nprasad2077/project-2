@@ -98,17 +98,14 @@ html {
   border: 2px white solid;
 }
 
-
-
-
-
 .nutritionData {
   display: flex;
   border: 2px white solid;
   flex-direction: column;
   text-align: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nova {
@@ -194,9 +191,4 @@ a:hover, a:active {
 
 img {
   max-width: 100%;
-}
-
-.imageInfo{
-  max-width: min-content;
-  margin-left: 37%;
 }

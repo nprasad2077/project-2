@@ -4,8 +4,9 @@ import Nova from './Nova'
 import Vegan from './Vegan'
 import NutriScore from './NutriScore'
 import Images from './Images'
-
 import NutritionFacts from './NutritionFacts'
+import EcoScore from './EcoScore'
+
 import {Link } from "react-router-dom";
 
 function NutritionData({foodData, setImage, image}) {
@@ -57,29 +58,17 @@ function NutritionData({foodData, setImage, image}) {
         Additives: {foodData && foodData[index].additives_tags}
       </div>
 
+      <EcoScore foodData={foodData} index={index} ecoCapital={ecoCapital}/>
 
-      <div className='eco-score'>
-        <h3>EcoScore</h3>
-        <p>EcoScore Grade: {foodData && ecoCapital}</p>
-        <p>EcoScore Score: {foodData && foodData[index].ecoscore_score} </p>
+      <NutritionFacts foodData={foodData} index={index} />
 
-      </div>
-
-      <div className='nutriFacts'>
-        <h3>Nutrition Facts{'(100g)'}</h3>
-        <p>Energy: {foodData && foodData[index].nutriments.energy_100g}</p>
-        <p>Sugars: {foodData && foodData[index].nutriments.sugars_100g}</p>
-        <p>Proteins: {foodData && foodData[index].nutriments.proteins_100g}</p>
-        <p>Sodium: {foodData && foodData[index].nutriments.sodium_100g}</p>
-        <p>Fat: {foodData && foodData[index].nutriments.fat_100g}</p>
-        <p>Carbohydrates: {foodData && foodData[index].nutriments.carbohydrates_100g}</p>
-      </div>
+      <NutriScore className='nutriScore' foodData={foodData} index={index}/>
 
         {/* <Nova className='nova' foodData={foodData} index={index}/> */}
         {/* <Vegan foodData={foodData} index={index}/> */}
-        <NutriScore className='nutriScore' foodData={foodData} index={index}/>
+  
       
-        <Link to='images/'><p>Images</p></Link>
+      <Link to='images/'><p>Images</p></Link>
       <Link to='/'><p>Back to Search</p></Link>
     </div>
   )
