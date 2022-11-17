@@ -25,7 +25,7 @@ function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, 
         {foodData && foodData.map(food => <div className='foodComponents' onClick={foodClick}><Link className='linky' to={'item/' + food.id}><img className='image-display' src={food.image_url}></img></Link><br></br> <span className='food-text'>{food.product_name}</span> <br></br> <span className='food-text'>{food.serving_size}</span> </div>)}
       </div>
       <Link className='aboutHome' to='about/'>About Me</Link>
-      {/* <button onClick={reload}>Refresh Page</button> */}
+      <button onClick={reload}>Start New Search</button>
     </div>
   )
 }
