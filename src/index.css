@@ -191,3 +191,12 @@ a:hover, a:active {
   display: flex;
   flex-flow: column wrap;
 }
+
+img {
+  max-width: 100%;
+}
+
+.imageInfo{
+  max-width: min-content;
+  margin-left: 37%;
+}
