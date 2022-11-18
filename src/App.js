@@ -47,9 +47,11 @@ function App() {
     setFoodInput(e.target.value)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setFoodSearch(foodInput)
     getFoodData()
+    setFoodInput('');
   }
 
   const foodClick = (e) => {
