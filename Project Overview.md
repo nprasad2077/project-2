@@ -9,7 +9,7 @@ Use this section to describe your final project and perhaps any links to relevan
 
 - [github repo](https://github.com/nprasad2077/project-2)
 - [deployment](https://project-2-teal.vercel.app/)
-- [demo recording]()
+- [demo recording](https://youtu.be/tsIotg2Qy6U)
 
 ## Wireframes & React Component Hierarchy
 
@@ -65,7 +65,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Creating/Implementing 'state' | H | 3hr | 2hrs | 2hrs |
 | Product details page | H | 2hr | 4hrs | 4hrs |
 | Routing | H | 1hr | 2hrs | 2hrs |
-| Styling | H | 2hr | 2hrs | 2hrs |
+| Styling | M | 2hr | 2hrs | 2hrs |
 | Total | H | 18.5hrs| 23hrs | 23hrs |
 
 ## Additional Libraries
