@@ -12,7 +12,7 @@ import {Link } from "react-router-dom";
 function NutritionData({foodData, setImage}) {
   const {id} = useParams();
 
-  const index = foodData.findIndex(function(data, index){
+  const index = foodData.findIndex(function(data){
     if (data.id === id) {
       return true;
     }
