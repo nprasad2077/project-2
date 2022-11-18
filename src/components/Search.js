@@ -15,7 +15,7 @@ function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, 
   return (
     <div className='form'>
       <div className='search'>
-        <input type='text' onChange={handleChange}></input>
+        <input type='text' placeholder='Search for a food product...' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Search</button>
         {' '}
         {/* <p>The Search Term is: {foodSearch}</p> */}

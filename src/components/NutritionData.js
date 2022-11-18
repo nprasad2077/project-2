@@ -82,8 +82,9 @@ function NutritionData({foodData, setImage}) {
         {/* <Vegan foodData={foodData} index={index}/> */}
   
       <div className='nutrition-links'>
-        <Link to='images/'><p>Images</p></Link>
         <Link to='/'><p>Back to Search</p></Link>
+        <Link to='images/'><p>Images</p></Link>
+        {/* <Link to='/'><p>Back to Search</p></Link> */}
       </div>
     </div>
   )
