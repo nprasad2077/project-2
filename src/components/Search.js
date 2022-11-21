@@ -1,15 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
-import axios from 'axios';
-import Header from './Header';
-import NutritionData from './NutritionData';
 import {Link } from "react-router-dom";
-import AboutMe from './AboutMe';
-import ApiInformation from './ApiInformation'
 
 
 
-function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, foodInput, setFoodInput, urlInput, foodList, setFoodList, handleChange, handleSubmit, handleString, foodClick, reload}) {
+function Search({foodData, handleChange, handleSubmit, foodClick, reload}) {
 
 
   return (
@@ -18,7 +12,6 @@ function Search({foodData, setFoodData, getFoodData, foodSearch, setFoodSearch, 
         <input type='text' placeholder='Search for a food product...' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Search</button>
         {' '}
-        {/* <p>The Search Term is: {foodSearch}</p> */}
       </div>
 
       <div className='masterFood'>

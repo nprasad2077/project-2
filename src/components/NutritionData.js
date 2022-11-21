@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import Nova from './Nova'
 import Vegan from './Vegan'
 import NutriScore from './NutriScore'
-import Images from './Images'
 import NutritionFacts from './NutritionFacts'
 import EcoScore from './EcoScore'
 import NutriLevels from './NutriLevels'
@@ -84,7 +83,6 @@ function NutritionData({foodData, setImage}) {
       <div className='nutrition-links'>
         <Link to='/'><p>Back to Search</p></Link>
         <Link to='images/'><p>Images</p></Link>
-        {/* <Link to='/'><p>Back to Search</p></Link> */}
       </div>
     </div>
   )

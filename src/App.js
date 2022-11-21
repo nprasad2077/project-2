@@ -35,7 +35,6 @@ function App() {
     axios.get (urlInput)
     .then(res => setFoodData(res.data.products))
     .catch(err => alert('error'))
-    console.log(foodData);
   }
 
   useEffect(() => {
