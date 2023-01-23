@@ -17,8 +17,13 @@ function NutritionData({foodData, setImage}) {
     }
   });
 
+  const allergensArr = foodData && foodData[index].allergens.split(',');
+  const allergensUpdate = foodData && allergensArr.map((allergen) => allergen.slice(3) + " ")
+
   console.log(foodData);
   console.log(foodData[index].allergens);
+  console.log(allergensArr);
+  console.log(allergensUpdate);
 
 
   useEffect(() => {setImage(index)}, [index])
@@ -53,7 +58,7 @@ function NutritionData({foodData, setImage}) {
         </div>
 
         <div className='allergens'>
-          Allergens: {foodData && foodData[index].allergens}
+          Allergens: {foodData && allergensUpdate}
         </div>
 
       <div className='numberAdd'>
