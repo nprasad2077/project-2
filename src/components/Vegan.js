@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Vegan({foodData, index}) {
-  return (
-    <div>
-        {/* <h6>Vegan: {foodData && foodData[index]}</h6> */}
-
-    </div>
-  )
+export class Vegan extends Component {
+  render() {
+    return (
+      <div>Vegan</div>
+    )
+  }
 }
 
 export default Vegan

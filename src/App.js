@@ -19,7 +19,7 @@ function App() {
   const [foodData, setFoodData] = useState('')
   const [foodSearch, setFoodSearch] = useState('');
   const [foodInput, setFoodInput]= useState('');
-  const urlInput = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodSearch}&action=process&json=1`
+  const urlInput = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodInput}&action=process&json=1`
   const [foodList, setFoodList] = useState([]);
   const [foodDisplay, setFoodDisplay] = useState('');
   const [image, setImage] = useState('')
@@ -30,16 +30,12 @@ function App() {
   }
 
 
-  const getFoodData = () => {
-    foodSearch && 
-    axios.get (urlInput)
+  const getFoodData = async () => {
+    const response = await axios.get (urlInput)
     .then(res => setFoodData(res.data.products))
     .catch(err => alert('error'))
   }
 
-  useEffect(() => {
-    getFoodData()
-  },[foodSearch])
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -47,10 +43,10 @@ function App() {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setFoodSearch(foodInput)
+    e.preventDefault()
+    console.log('works');
     getFoodData()
-    setFoodInput('');
+    // setFoodInput('');
   }
 
   const foodClick = (e) => {
