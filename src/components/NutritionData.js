@@ -17,6 +17,9 @@ function NutritionData({foodData, setImage}) {
     }
   });
 
+  console.log(foodData);
+  console.log(foodData[index].allergens);
+
 
   useEffect(() => {setImage(index)}, [index])
 
@@ -50,7 +53,7 @@ function NutritionData({foodData, setImage}) {
         </div>
 
         <div className='allergens'>
-          Allergens: {foodData && + foodData[index].allergens_imported}
+          Allergens: {foodData && foodData[index].allergens}
         </div>
 
       <div className='numberAdd'>
