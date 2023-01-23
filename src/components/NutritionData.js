@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Nova from './Nova'
 import Vegan from './Vegan'
@@ -17,7 +17,8 @@ function NutritionData({foodData, setImage}) {
     }
   });
 
-  setImage(index);
+
+  useEffect(() => {setImage(index)}, [index])
 
 
 
