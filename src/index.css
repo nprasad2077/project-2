@@ -138,9 +138,10 @@ img {
   max-width: 100%;
   align-self: center;
 }
-.nutriScore, .components, .first-component {
+.nutriScore, .first-component {
   border: 2px solid white;
 }
+
 .bold {
   font-weight: bold;
 }
@@ -149,10 +150,19 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   text-align: center;
+  width: 100%;
+  align-items: center;
+  object-fit: contain;
+  justify-content: center;
+  /* border: 2px solid #22333b; */
 
 }
 .grid-components {
-  flex-basis: 25%;
+  object-fit: contain;
+  flex-basis: 24.5%;
+  border: 2px solid #22333b;
+  margin: auto;
+  justify-content: center;
 
 }
 .first-component {

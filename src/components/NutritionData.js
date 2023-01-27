@@ -23,7 +23,7 @@ function NutritionData({foodData, setImage, getFoodData}) {
 
   useEffect(() => {setImage(index)}, [index])
 
-  useEffect(() => getFoodData(), [] )
+  // useEffect(() => getFoodData(), [] )
 
 
 
