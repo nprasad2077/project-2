@@ -60,22 +60,19 @@ function NutritionData({foodData, setImage, getFoodData}) {
     </div>
 
       <div className='components'>
-          <div className='grid-components'>
+          <div className='grid-components nutri-back'>
             <EcoScore foodData={foodData} index={index} ecoCapital={ecoCapital}/>
           </div>
-          <div className='grid-components'>
+          <div className='grid-components nutri-back'>
             <NutritionFacts foodData={foodData} index={index} />
           </div>
-          <div className='grid-components'>
+          <div className='grid-components nutri-back'>
             <NutriScore foodData={foodData} index={index}/>
           </div>
-          <div className='grid-components'>
+          <div className='grid-components nutri-back'>
             <NutriLevels foodData={foodData} index={index}/>
           </div>
       </div>
-
-        {/* <Nova className='nova' foodData={foodData} index={index}/> */}
-        {/* <Vegan foodData={foodData} index={index}/> */}
   
       <div className='nutrition-links'>
         <Link to='/'><p>Back to Search</p></Link>

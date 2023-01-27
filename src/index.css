@@ -166,12 +166,9 @@ img {
 }
 .nutrition-links {
   text-align: center;
+  margin-top: 5rem;
 }
 
-.nutri-back {
-  background-color: white;
-
-}
 
 .imageInfo, .additives, .components {
   margin-bottom: 15px;
@@ -208,4 +205,10 @@ input[type=button], button {
   margin: 4px 2px;
   cursor:pointer;
   font-size: medium;
+}
+
+.nutri-back {
+  background-color: white;
+  color: #22333b;
+
 }
