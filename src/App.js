@@ -63,7 +63,7 @@ function App() {
           <Route path='item/:id/' element={<NutritionData getFoodData={getFoodData} urlInput={urlInput} foodData={foodData} foodSearch={foodSearch} foodList={foodList} image={image} setImage={setImage} />} />
           <Route path='about/' element ={<AboutMe />} />
           <Route path='about/apiinfo/' element={<ApiInformation />} />
-          <Route path='item/:id/images/' element={<Images foodData={foodData} image={image} navigate={navigate} />} />
+          <Route path='item/:id/images/' element={<Images foodData={foodData} image={image} navigate={navigate}/>} />
         </Routes>
       </main>
     </div>

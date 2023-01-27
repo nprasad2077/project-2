@@ -8,10 +8,10 @@ import EcoScore from './EcoScore'
 import NutriLevels from './NutriLevels'
 import {Link } from "react-router-dom";
 
-function NutritionData({foodData, setImage}) {
+function NutritionData({foodData, setImage, getFoodData}) {
   const {id} = useParams();
 
-  const index = foodData.findIndex(function(data){
+  const index = foodData && foodData.findIndex(function(data){
     if (data.id === id) {
       return true;
     }
@@ -23,6 +23,8 @@ function NutritionData({foodData, setImage}) {
 
   useEffect(() => {setImage(index)}, [index])
 
+  useEffect(() => getFoodData(), [] )
+
 
 
   const ecoCapital = (foodData && foodData[index].ecoscore_grade).toUpperCase();
@@ -32,10 +34,7 @@ function NutritionData({foodData, setImage}) {
     <div className='nutritionData'>
 
       <div className='first-component'>
-
-
         <h1 className='productName'>{foodData && foodData[index].product_name}</h1>
-
         <div className='brands'>
           Brands: {foodData && foodData[index].brands}
         </div>
@@ -43,23 +42,17 @@ function NutritionData({foodData, setImage}) {
         <div>
           Origin Countries: {foodData && foodData[index].countries}
         </div>
-
         <br></br>
-
         <img className='imageInfo' src={foodData && foodData[index].image_url}></img>
-
         <div className='ingredients'>
           Ingredients: {foodData && foodData[index].ingredients_text}
         </div>
-
         <div className='allergens'>
           Allergens: {foodData && allergensUpdate}
         </div>
-
       <div className='numberAdd'>
         Number of food addivites: {foodData && foodData[index].additives_n}
       </div>
-
       <div className='additives'>
         Additives: {foodData && foodData[index].additives_tags}
       </div>
