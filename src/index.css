@@ -100,6 +100,11 @@ a:hover, a:active , .back-button:hover, .back-button:active, .linky:hover, .link
   background-color: red;
 }
 
+.header-link:visited  {
+  background-color: #22333b;
+}
+
+
 
 
 .allergens {

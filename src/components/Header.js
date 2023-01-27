@@ -7,8 +7,12 @@ import logo from '../assets/food.png'
 function Header() {
   return (
     <div className='header-box'>
-      <img src={logo}></img>
-      <h1 className='header'>Nutri-Scan</h1>
+
+          <img src={logo}></img>
+
+
+          <h1 className='header'>Nutri-Scan</h1>
+
     </div>
   )
 }
