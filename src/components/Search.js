@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Link } from "react-router-dom";
 
 
 
 function Search({foodData, handleChange, handleSubmit, foodClick, reload}) {
 
+  const input = document.getElementById('input')
+
+  useEffect(() => {
+    if (input){
+      input.addEventListener('keyup', function(e){
+        if (e.key === "Enter") {
+          e.preventDefault()
+
+          handleSubmit()
+
+        }
+      })
+    }
+  })
+
 
   return (
     <div className='form'>
       <div className='search'>
-        <input type='text' placeholder='Search for a food product...' onChange={handleChange}></input>
+        <input type='text' placeholder='Search for a food product...' onChange={handleChange} id='input'></input>
         <button onClick={handleSubmit}>Search</button>
         {' '}
       </div>
