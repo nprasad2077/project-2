@@ -23,41 +23,28 @@ function NutritionData({foodData, setImage, getFoodData}) {
 
   useEffect(() => {setImage(index)}, [index])
 
-  // useEffect(() => getFoodData(), [] )
-
 
 
   const ecoCapital = (foodData && foodData[index].ecoscore_grade).toUpperCase();
+
+  console.log(foodData[index]);
+  console.log(foodData[index].product_name); //Title
+  console.log(foodData[index].quantity) //quantity
+  console.log(foodData[index].packaging); //packaging
+  console.log(foodData[index].brands);  //brands
+  console.log(foodData[index].categories_hierarchy); //categories
+  console.log(foodData[index].labels); //labels
+  console.log(foodData[index].manufacturing_places); //manufacturing places
+  console.log(foodData[index].countries); //countries 
+  
+
+
 
 
   return (
     <div className='nutritionData'>
 
-      <div className='first-component'>
-        <h1 className='productName'>{foodData && foodData[index].product_name}</h1>
-        <div className='brands'>
-          Brands: {foodData && foodData[index].brands}
-        </div>
-        <br></br>
-        <div>
-          Origin Countries: {foodData && foodData[index].countries}
-        </div>
-        <br></br>
-        <img className='imageInfo' src={foodData && foodData[index].image_url}></img>
-        <div className='ingredients'>
-          Ingredients: {foodData && foodData[index].ingredients_text}
-        </div>
-        <div className='allergens'>
-          Allergens: {foodData && allergensUpdate}
-        </div>
-      <div className='numberAdd'>
-        Number of food addivites: {foodData && foodData[index].additives_n}
-      </div>
-      <div className='additives'>
-        Additives: {foodData && foodData[index].additives_tags}
-      </div>
     
-    </div>
 
       <div className='components'>
           <div className='grid-components nutri-back'>
