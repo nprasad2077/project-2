@@ -3,7 +3,7 @@ import React from 'react'
 function NutriLevels({foodData, index}) {
 
   return (
-    <div class='w-full h-full'>
+    <div class='p-4'>
       <h3 class='text-xl my-2'>Nutrient Levels</h3>
 
       <div className='fat-levels'>

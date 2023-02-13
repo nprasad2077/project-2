@@ -66,14 +66,14 @@ function NutritionData({foodData, setImage, getFoodData}) {
         </div>
       </div>
 
-      <div class='flex flex-wrap justify-center items-center border border-2 border-sky-500 w-3/4'>
-          <div class='bg-white text-[#22333b] flex-1'>
+      <div class='table justify-center items-center border border-2 border-sky-500 w-3/4 h-full'>
+          <div class='bg-white text-[#22333b] table-cell w-1/3'>
             <NutritionFacts foodData={foodData} index={index} />
           </div>
-          <div class='bg-white text-[#22333b] flex-1'>
+          <div class='bg-white text-[#22333b] table-cell w-1/3'>
             <NutriScore foodData={foodData} index={index}/>
           </div>
-          <div class='bg-white text-[#22333b] flex items-center justify-center flex-1'>
+          <div class='bg-white text-[#22333b] table-cell w-1/3'>
             <NutriLevels foodData={foodData} index={index}/>
           </div>
       </div>
