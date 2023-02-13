@@ -43,7 +43,14 @@ function NutritionData({foodData, setImage, getFoodData}) {
 
   return (
     <div className='nutritionData'>
-      
+
+      <div class=' mb-10 border border-2 border-sky-500'>
+        <div>
+          <p class='text-3xl text-center'>{foodData[index].product_name}</p>
+        </div>
+
+      </div>
+
 
     
 
