@@ -36,7 +36,9 @@ function NutritionData({foodData, setImage, getFoodData}) {
   console.log(foodData[index].labels); //labels
   console.log(foodData[index].manufacturing_places); //manufacturing places
   console.log(foodData[index].countries); //countries 
-  console.log(foodData[index].image_url)
+  console.log(foodData[index].image_url) //image
+  console.log(foodData[index].ingredients_text_en) //ingredients english
+  console.log(foodData[index].ingredients_text) //ingredients
   
 
 
@@ -46,35 +48,32 @@ function NutritionData({foodData, setImage, getFoodData}) {
   return (
     <div className='flex flex-col items-center justify-center'>
 
-      <div class='mt-10 mb-2 border border-2 border-sky-500 flex flex-col items-center justify-center bg-white text-[#22333b] w-2/3'>
+      <div class='mt-10 mb-2 border border-2 border-sky-500 flex flex-col items-center justify-center bg-white text-[#22333b] w-3/4'>
         <div>
-          <p class='text-3xl text-center'>{foodData[index].product_name}</p>
+          <p class='text-3xl text-center mt-2'>{foodData[index].product_name}</p>
           <p class='text-center'>Quantity: {foodData[index].quantity}</p>
         </div>
-        <div class='w-max'>
+        <div class='w-max mt-2'>
           <img class='w-full' src={foodData[index].image_url}></img>
         </div>
-        <div>
+        <div class='p-4'>
           <p>Barcode: {foodData[index].code}</p>
           <p>Packaging: {foodData[index].packaging}</p>
           <p>Brands: {foodData[index].brands}</p>
           <p>Manufacturing or processing places: {foodData[index].manufacturing_places}</p>
           <p>Countries where sold: {foodData[index].countries}</p>
+          <p class='mt-4'>Ingredients: {foodData[index].ingredients_text_en}</p>
         </div>
-
       </div>
 
-
-    
-
-      <div class='flex flex-row justify-center items-center'>
-          <div className='grid-components nutri-back'>
+      <div class='flex flex-wrap justify-center items-center border border-2 border-sky-500 w-3/4'>
+          <div class='bg-white text-[#22333b] flex-1'>
             <NutritionFacts foodData={foodData} index={index} />
           </div>
-          <div className='grid-components nutri-back'>
+          <div class='bg-white text-[#22333b] flex-1'>
             <NutriScore foodData={foodData} index={index}/>
           </div>
-          <div className='grid-components nutri-back'>
+          <div class='bg-white text-[#22333b] flex items-center justify-center flex-1'>
             <NutriLevels foodData={foodData} index={index}/>
           </div>
       </div>

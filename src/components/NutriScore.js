@@ -10,7 +10,7 @@ function NutriScore({foodData, index}) {
 
 
   return (
-    <div class='w-max p-4'>
+    <div class='p-4'>
         <h3 class='text-xl my-2'>Nutriscore Data</h3>
         <p>NutriScore Grade: {foodData && capitalGrade}</p>
         <p>Energy: {foodData && foodData[index].nutriscore_data.energy}</p>

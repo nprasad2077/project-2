@@ -2,7 +2,7 @@ import React from 'react'
 
 function NutritionFacts({foodData, index}) {
   return (
-    <div class='w-max p-4'>
+    <div class='p-4'>
        <div>
         <h3 class='text-xl my-2'>Nutrition Facts{' (100g)'}</h3>
         <p>Energy: {foodData && foodData[index].nutriments.energy_100g}</p>
