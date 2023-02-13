@@ -36,18 +36,23 @@ function NutritionData({foodData, setImage, getFoodData}) {
   console.log(foodData[index].labels); //labels
   console.log(foodData[index].manufacturing_places); //manufacturing places
   console.log(foodData[index].countries); //countries 
+  console.log(foodData[index].image_url)
+  
 
 
 
 
 
   return (
-    <div className='nutritionData'>
+    <div className='flex flex-col items-center justify-center'>
 
-      <div class=' mb-10 border border-2 border-sky-500 flex flex-col items-center justify-center bg-white text-[#22333b]'>
+      <div class='my-10 border border-2 border-sky-500 flex flex-col items-center justify-center bg-white text-[#22333b] w-2/3'>
         <div>
           <p class='text-3xl text-center'>{foodData[index].product_name}</p>
           <p class='text-center'>Quantity: {foodData[index].quantity}</p>
+        </div>
+        <div class='w-max'>
+          <img class='w-full' src={foodData[index].image_url}></img>
         </div>
         <div>
           <p>Barcode: {foodData[index].code}</p>
