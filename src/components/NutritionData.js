@@ -36,13 +36,14 @@ function NutritionData({foodData, setImage, getFoodData}) {
   console.log(foodData[index].labels); //labels
   console.log(foodData[index].manufacturing_places); //manufacturing places
   console.log(foodData[index].countries); //countries 
-  
+
 
 
 
 
   return (
     <div className='nutritionData'>
+      
 
     
 
