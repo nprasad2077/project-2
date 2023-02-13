@@ -2,8 +2,8 @@ import React from 'react'
 
 function NutriLevels({foodData, index}) {
   return (
-    <div className='nutri-levels'>
-      <h3>Nutrient Levels</h3>
+    <div class='w-max p-4'>
+      <h3 class='text-xl my-2'>Nutrient Levels</h3>
 
       <div className='fat-levels'>
         <span className='bold'>Fat:</span> {foodData && foodData[index].nutrient_levels.fat}

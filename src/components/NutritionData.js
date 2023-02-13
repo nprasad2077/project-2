@@ -67,10 +67,7 @@ function NutritionData({foodData, setImage, getFoodData}) {
 
     
 
-      <div className='components'>
-          <div className='grid-components nutri-back'>
-            <EcoScore foodData={foodData} index={index} ecoCapital={ecoCapital}/>
-          </div>
+      <div class='flex flex-row justify-center items-center'>
           <div className='grid-components nutri-back'>
             <NutritionFacts foodData={foodData} index={index} />
           </div>
