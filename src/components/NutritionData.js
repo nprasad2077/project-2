@@ -48,7 +48,7 @@ function NutritionData({foodData, setImage, getFoodData}) {
   return (
     <div className='flex flex-col items-center justify-center'>
 
-      <div class='mt-10 mb-2 border border-2 border-sky-500 flex flex-col items-center justify-center bg-white text-[#22333b] w-3/4'>
+      <div class='mt-10 mb-2 border border-2 border-red-500 flex flex-col items-center justify-center bg-white text-[#22333b] w-3/4'>
         <div>
           <p class='text-3xl text-center mt-2'>{foodData[index].product_name}</p>
           <p class='text-center'>Quantity: {foodData[index].quantity}</p>
@@ -66,11 +66,11 @@ function NutritionData({foodData, setImage, getFoodData}) {
         </div>
       </div>
 
-      <div class='table justify-center items-center border border-2 border-sky-500 w-3/4 h-full'>
-          <div class='bg-white text-[#22333b] table-cell w-1/3'>
+      <div class='table justify-center items-center border border-2 border-red-500 w-3/4 h-full'>
+          <div class='bg-white text-[#22333b] table-cell w-1/3 border-r-4 border-[#656d4a]'>
             <NutritionFacts foodData={foodData} index={index} />
           </div>
-          <div class='bg-white text-[#22333b] table-cell w-1/3'>
+          <div class='bg-white text-[#22333b] table-cell w-1/3 border-r-4 border-[#656d4a]'>
             <NutriScore foodData={foodData} index={index}/>
           </div>
           <div class='bg-white text-[#22333b] table-cell w-1/3'>
