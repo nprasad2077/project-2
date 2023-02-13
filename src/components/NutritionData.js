@@ -44,9 +44,17 @@ function NutritionData({foodData, setImage, getFoodData}) {
   return (
     <div className='nutritionData'>
 
-      <div class=' mb-10 border border-2 border-sky-500'>
+      <div class=' mb-10 border border-2 border-sky-500 flex flex-col items-center justify-center bg-white text-[#22333b]'>
         <div>
           <p class='text-3xl text-center'>{foodData[index].product_name}</p>
+          <p class='text-center'>Quantity: {foodData[index].quantity}</p>
+        </div>
+        <div>
+          <p>Barcode: {foodData[index].code}</p>
+          <p>Packaging: {foodData[index].packaging}</p>
+          <p>Brands: {foodData[index].brands}</p>
+          <p>Manufacturing or processing places: {foodData[index].manufacturing_places}</p>
+          <p>Countries where sold: {foodData[index].countries}</p>
         </div>
 
       </div>
